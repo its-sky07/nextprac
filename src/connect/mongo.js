@@ -9,7 +9,7 @@ const connectDB = async () => {
        return; // Use current connection
      }
    
-     await mongoose.connect('mongodb+srv://rohit123:rohit123@cluster0.ph6tlur.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
+     await mongoose.connect(process.env.MONGO_URI);
      console.log("database connected")
  } catch (error) {
     console.error( "not connected",error);
